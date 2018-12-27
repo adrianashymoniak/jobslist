@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% for job in jobs %}
-    {{ job.summary }} <br>
-    {{ job.description }} <br>
-    {{ job.company }} <br>
-    {{ job.status }} <br>
-    {{ job.urgency }} <br>
-{% endfor %}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block body %}
+    <div class="form-group">
+        {% for language in languages %}
+            <h1>{{ language }} </h1>
+            {% for job in jobs %}
+                {% if language == job.language %}
+                    <a href="{% url 'details' pk=job.pk %}">{{ job.summary }}</a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
