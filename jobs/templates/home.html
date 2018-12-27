@@ -5,7 +5,7 @@
             <h1>{{ language }} </h1>
             {% for job in jobs %}
                 {% if language == job.language %}
-                    <a href="{% url 'job_details' pk=job.pk %}">{{ job.summary }}</a>
+                    <h3><a href="{% url 'job_details' pk=job.pk %}">{{ job.summary }}</a></h3>
                 {% endif %}
             {% endfor %}
         {% endfor %}

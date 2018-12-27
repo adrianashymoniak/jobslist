@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block body %}
+    <label>Summary:</label>
     <p>{{ job.summary }}</p>
+    <label>Description:</label>
     <p>{{ job.description }}</p>
+    <label>Language:</label>
     <p>{{ job.language }}</p>
+    <label>Status:</label>
     <p>{{ job.status }}</p>
+    <label>Urgency:</label>
     <p>{{ job.urgency }}</p>
+   <label>Company:</label>
     <p>{{ job.company }}</p>
 {% endblock %}
