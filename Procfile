@@ -1,2 +1,2 @@
-web: gunicorn bootcamp.wsgi --log-file -
+web: gunicorn jobs_list_application.wsgi --log-file -
 
