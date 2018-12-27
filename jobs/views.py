@@ -20,17 +20,28 @@ def create_job(request):
         if form.is_valid():
             job = form.save(commit=False)
             job.save()
-            return redirect('details', pk=job.pk)
+            return redirect('job_details', pk=job.pk)
         else:
             context = {'form': form}
-            return render(request, 'create-new-job.html', context)
+            return render(request, 'create-job.html', context)
     else:
         form = JobForm()
         context = {'form': form}
-        return render(request, 'create-new-job.html', context)
+        return render(request, 'create-job.html', context)
 
 
-def details(request, pk):
+def job_details(request, pk):
     job = get_object_or_404(Job, pk=pk)
     context = {'job': job}
-    return render(request, 'details.html', context)
+    return render(request, 'job-details.html', context)
+
+
+def delete_all_jobs(request):
+    Job.objects.all().delete()
+    return redirect('home')
+
+
+def delete_job(request, pk):
+    job = get_object_or_404(Job, pk=pk)
+    job.delete()
+    return redirect('home')

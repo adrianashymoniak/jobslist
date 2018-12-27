@@ -8,6 +8,30 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a id="home-page" class="navbar-brand" href="{% url 'home' %}">Jobs List</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a id="create-job" href="{% url 'create_job' %}">Create Job</a>
+                </li>
+                <li>
+                    <a id="delete-all-jobs" href="{% url 'delete_all_jobs' %}" class="job-delete">Delete All Jobs</a>
+                </li>
+                {% url 'job_details' pk=job.pk as details_url %}
+                {% if request.get_full_path == details_url %}
+                    <li>
+                        <a id="delete-job-page" href="{% url 'delete_job' pk=job.pk %}" class="job-delete">Delete
+                            Job</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</header>
 {% block body %} {% endblock %}
 </body>
 </html>
