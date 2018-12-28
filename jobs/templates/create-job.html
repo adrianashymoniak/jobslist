@@ -2,28 +2,30 @@
 {% block body %}
     <form method="post" name="form">
         {% csrf_token %}
-        <label for="status">Status</label>
-        <select name="status" id="id-status" class="form-control">
-            <option value="Open" {% if job.status == "Open" %}selected="selected"{% endif %}>Open</option>
-            <option value="Closed" {% if job.status == "Closed" %}selected="selected"{% endif %}>Closed</option>
-        </select>
-        <label for="urgency">Urgency</label>
-        <select name="urgency" id="id-urgency" class="form-control">
-            <option value="Hot" {% if job.urgency == "Hot" %}selected="selected"{% endif %}>Hot</option>
-            <option value="Usual" {% if job.urgency == "Usual" %}selected="selected"{% endif %}>Usual</option>
-        </select>
-        <label for="summary">Summary</label>
-        <input class="form-control" id="summary" type="text" name="summary" maxlength="150"
-               value="{{ job.summary }}"/>
-        <label for="description">Description</label>
-        <textarea class="form-control" rows="5" cols="50" id="description"
-                  name="description">{{ job.description }}</textarea>
-        <label for="company">Company</label>
-        <input class="form-control" id="company" type="text" name="company" maxlength="150"
-               value="{{ job.company }}"/>
-        <label for="language">Language</label>
-        <input class="form-control" id="language" type="text" name="language" maxlength="150"
-               value="{{ job.language }}"/>
-        <button type="submit">Save</button>
+        <div class="alignment">
+            <label for="status">Status</label>
+            <select name="status" id="id-status" class="form-control">
+                <option value="Open" {% if job.status == "Open" %}selected="selected"{% endif %}>Open</option>
+                <option value="Closed" {% if job.status == "Closed" %}selected="selected"{% endif %}>Closed</option>
+            </select>
+            <label for="urgency">Urgency</label>
+            <select name="urgency" id="id-urgency" class="form-control">
+                <option value="Hot" {% if job.urgency == "Hot" %}selected="selected"{% endif %}>Hot</option>
+                <option value="Usual" {% if job.urgency == "Usual" %}selected="selected"{% endif %}>Usual</option>
+            </select>
+            <label for="summary">Summary</label>
+            <input class="form-control" id="summary" type="text" name="summary" maxlength="150"
+                   value="{{ job.summary }}"/>
+            <label for="description">Description</label>
+            <textarea class="form-control" rows="5" cols="50" id="description"
+                      name="description">{{ job.description }}</textarea>
+            <label for="company">Company</label>
+            <input class="form-control" id="company" type="text" name="company" maxlength="150"
+                   value="{{ job.company }}"/>
+            <label for="language">Language</label>
+            <input class="form-control" id="language" type="text" name="language" maxlength="150"
+                   value="{{ job.language }}"/>
+            <button type="submit" class="btn btn-primary">Save</button>
     </form>
+    </div>
 {% endblock %}

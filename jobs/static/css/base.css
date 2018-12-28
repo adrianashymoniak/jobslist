@@ -1,0 +1,15 @@
+.alignment {
+    margin: auto 50px 20px 50px;
+    width: 60%;
+}
+
+.btn.btn-primary {
+    width: 200px;
+    margin-right: 0;
+    margin-bottom: 30px;
+    margin-top:30px;
+}
+
+.language-group {
+    color: navy;
+}

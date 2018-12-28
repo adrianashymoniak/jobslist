@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% block body %}
-    <div class="form-group">
-        {% for language in languages %}
-            <h1>{{ language }} </h1>
-            {% for job in jobs %}
-                {% if language == job.language %}
-                    <h3><a href="{% url 'job_details' pk=job.pk %}">{{ job.summary }}</a></h3>
-                {% endif %}
+    <div class="alignment">
+        <div class="form-group">
+            {% for language in languages %}
+                <h1 class="language-group">Language: {{ language }} </h1>
+                {% for job in jobs %}
+                    {% if language == job.language %}
+                        <h3><a href="{% url 'job_details' pk=job.pk %}">{{ job.summary }}</a></h3>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
+        </div>
     </div>
 {% endblock %}

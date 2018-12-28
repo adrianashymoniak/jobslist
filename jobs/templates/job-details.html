@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% block body %}
-    <label>Summary:</label>
-    <p>{{ job.summary }}</p>
-    <label>Description:</label>
-    <p>{{ job.description }}</p>
-    <label>Language:</label>
-    <p>{{ job.language }}</p>
-    <label>Status:</label>
-    <p>{{ job.status }}</p>
-    <label>Urgency:</label>
-    <p>{{ job.urgency }}</p>
-   <label>Company:</label>
-    <p>{{ job.company }}</p>
+    <div class="alignment">
+        <h3>Summary:</h3>
+        <pre>{{ job.summary }}</pre>
+        <h3>Description:</h3>
+        <pre>{{ job.description }}</pre>
+        <h3>Language:</h3>
+        <pre>{{ job.language }}</pre>
+        <h3>Status:</h3>
+        <pre>{{ job.status }}</pre>
+        <h3>Urgency:</h3>
+        <pre>{{ job.urgency }}</pre>
+        <h3>Company:</h3>
+        <pre>{{ job.company }}</pre>
+    </div>
 {% endblock %}
