@@ -13,3 +13,7 @@
 .language-group {
     color: navy;
 }
+
+pre {
+    white-space: pre-line;
+}
